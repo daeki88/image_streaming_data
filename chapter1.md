@@ -313,6 +313,11 @@ html.split('\n')[0:10]
 
 
 
+** 직접하기 **
+
+- [구글 홈페이지](http://google.com)를 가져와 출력해보자.
+- [네이버 홈페이지](http://naver.com)를 가져와 출력해보자.
+
 ## 파싱(Beautiful Soup)
 
 BeautifulSoup 모듈을 이용해서 웹 페이지에서 필요한 정보들을 찾아낼 수 있다.
@@ -1482,7 +1487,7 @@ df.set_index('구분').plot(kind='line', xticks=np.arange(len(df['구분'])), ro
 
 
 
-![png](output_42_1.png)
+![png](output_43_1.png)
 
 
 `xticks=np.arange(16)`는 xtick이 보여질 위치를 지정하는 것이다.
@@ -1502,7 +1507,7 @@ df.boxplot()
 
 
 
-![png](output_44_1.png)
+![png](output_45_1.png)
 
 
 - 파이 그래프
@@ -1520,7 +1525,7 @@ df_excel['Political Party'].value_counts().plot(kind="pie")
 
 
 
-![png](output_46_1.png)
+![png](output_47_1.png)
 
 
 - 바차트
@@ -1538,7 +1543,7 @@ df_excel['Political Party'].value_counts().plot(kind="bar")
 
 
 
-![png](output_48_1.png)
+![png](output_49_1.png)
 
 
 ## 참고 사이트
@@ -1552,9 +1557,6 @@ df_excel['Political Party'].value_counts().plot(kind="bar")
 - Pandas Documentation: http://pandas.pydata.org/pandas-docs/stable/
 
 # 영상 데이터
-## 참고 사이트
-- 파이썬 이미지 처리 블로그: http://pythonstudy.xyz/python/article/406-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B2%98%EB%A6%AC
-- Pillow documentation: https://pillow.readthedocs.io/en/4.2.x/
 
 ## 소개
 
@@ -1640,7 +1642,7 @@ img.save('images/lenna.jpg')
     
 
 
-![png](output_53_1.png)
+![png](output_54_1.png)
 
 
 
@@ -1676,7 +1678,7 @@ plt.imshow(cropImage)
 
 
 
-![png](output_56_1.png)
+![png](output_57_1.png)
 
 
 - 붙이기
@@ -1702,7 +1704,7 @@ plt.imshow(img1)
 
 
 
-![png](output_58_1.png)
+![png](output_59_1.png)
 
 
 - 파이썬 로고 붙이기
@@ -1756,7 +1758,7 @@ plt.imshow(img3)
 
 
 
-![png](output_64_1.png)
+![png](output_65_1.png)
 
 
 
@@ -1773,7 +1775,7 @@ plt.imshow(img4)
 
 
 
-![png](output_65_1.png)
+![png](output_66_1.png)
 
 
 `expand=True` 선택을 하면 전체 그림이 보이며 새로 만들어진 이미지의 크기는 증가한다.
@@ -1792,7 +1794,7 @@ plt.imshow(img5)
 
 
 
-![png](output_67_1.png)
+![png](output_68_1.png)
 
 
 ## 필터링
@@ -1829,7 +1831,7 @@ plt.imshow(flipImage)
 
 
 
-![png](output_71_1.png)
+![png](output_72_1.png)
 
 
 ## 점(픽셀) 연산
@@ -1850,7 +1852,7 @@ plt.imshow(out)
 
 
 
-![png](output_73_1.png)
+![png](output_74_1.png)
 
 
 - 채널에 대한 연산을 수행
@@ -1885,16 +1887,18 @@ plt.imshow(img1)
 
 
 
-![png](output_75_1.png)
+![png](output_76_1.png)
 
 
 `x and y` 연산은 x가 거짓(0)이면 결과값은 x(0)이고 참이면 결과값은 y가 된다.
 
+## 참고 사이트
+
+- 파이썬 이미지 처리 블로그: http://pythonstudy.xyz/python/article/406-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B2%98%EB%A6%AC
+- Pillow documentation: https://pillow.readthedocs.io/en/4.2.x/
+
 # 얼굴 인식
 
-## 참고 사이트
-- 라즈베리 파이 얼굴: http://blog.naver.com/PostView.nhn?blogId=cosmosjs&logNo=220723987718&categoryNo=0&parentCategoryNo=56&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
-- dlib: http://dlib.net/face_recognition.py.html
 
 ## 준비
 
@@ -1910,13 +1914,6 @@ conda install -c conda-forge opencv # opencv 3.3, 아나콘다
 ```
 
 `y`를 눌러 설치를 한다.
-
-### dlib 설치
-
-```python
-pip install dlib
-conda install -c menpo dlib # 아나콘다
-```
 
 ### xml 파일들 다운로드
 
@@ -2003,7 +2000,7 @@ for (x, y, w, h) in faces:
         cv2.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
 
 cv2.imshow('Face Detection', img)
-cv2.waitKey(0)
+cv2.waitKey(0) # 키 눌러지길 기다린다.
 cv2.destroyAllWindows()
 ```
 
@@ -2015,9 +2012,9 @@ cv2.destroyAllWindows()
 
 ## 비디오
 
-
-
 - 얼굴 인식
+
+아래 코드를 `비디오얼굴인식.py`로 저장후 실행한다.
 
 ```python
 import cv2
@@ -2060,7 +2057,7 @@ while True:
     cv2.imshow('Video', frame)
 
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'): # q 키가 눌리길 기다린다.
         break
 
 # When everything is done, release the capture
@@ -2068,8 +2065,9 @@ video_capture.release()
 cv2.destroyAllWindows()
 ```
 
-### 참고 사이트
-http://localhost:8888/notebooks/Applications.ipynb#
+## 참고 사이트
+- 라즈베리 파이 얼굴: http://blog.naver.com/PostView.nhn?blogId=cosmosjs&logNo=220723987718&categoryNo=0&parentCategoryNo=56&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+- dlib: http://dlib.net/face_recognition.py.html
 - https://realpython.com/blog/python/face-detection-in-python-using-a-webcam/
 - https://github.com/shantnu/Webcam-Face-Detect
 
@@ -2077,21 +2075,27 @@ http://localhost:8888/notebooks/Applications.ipynb#
 
 ## opencv이용
 
-https://www.pyimagesearch.com/2017/09/18/real-time-object-detection-with-deep-learning-and-opencv/ 참조.
-
-카페모델은 https://github.com/chuanqi305/MobileNet-SSD 에서 밑에 보면 링크https://drive.google.com/open?id=0B3gersZ2cHIxZi13UWF0OXBsZzA 가 있다. 이것이 위에서 예제로 사용한 것과 같은 모델인지는 확인 못했음. 테스트 해본 결과 적용이 안되는 것 확인.
-
 `imutils` 모듈 설치 필요
 
 ```python
 pip install imutils
 ```
 
+### 모델과 프로토 다운로드
+
+[모델](http://gofile.me/6w7gF/egVdflHDS), [프로토타입](http://gofile.me/6w7gF/dr7GO5SBS)을 현재 작업 디렉토리에 다운로드 받는다.
+
+### 실행
+
+명령어창에서는 다음과 같이 실행하면 된다.
+
 ```python
 python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel
 ```
 
-`q`를 눌러서 종료할 수 있는데 종료가 안될 경우도 생긴다. 그럴때는 ctrl + alt + del을 눌러서 연결된 python 실행을 강제로 종료해야 한다.
+파이참에서 실행하기 위해서는 `Edit Configurations` 항목에서 `Script parameters`에 `--prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel`를 넣고 실행한다.
+
+아래 코드를 `사물인식.py`로 저장하고 실행시킨다.
 
 ```python
 # USAGE
@@ -2197,3 +2201,9 @@ print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
 cv2.destroyAllWindows()
 vs.stop()
 ```
+
+`q`를 눌러서 종료할 수 있는데 종료가 안될 경우도 생긴다. 그럴때는 ctrl + alt + del을 눌러서 연결된 python 실행을 강제로 종료해야 한다.
+
+## 참고 사이트
+
+- https://www.pyimagesearch.com/2017/09/18/real-time-object-detection-with-deep-learning-and-opencv/ 참조.
