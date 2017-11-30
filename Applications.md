@@ -2744,13 +2744,7 @@ for (url, file) in zip(urls, files):
 
 ### 실행
 
-사용법은 다음과 같이 한다.
-
-```python
-python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel
-```
-
-`q`를 눌러서 종료할 수 있는데 종료가 안될 경우도 생긴다. 그럴때는 ctrl + alt + del을 눌러서 연결된 python 실행을 강제로 종료해야 한다.
+아래 코드를 `real_time_object_detection.py` 이름으로 저장한다.
 
 ```python
 # USAGE
@@ -2856,6 +2850,15 @@ print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
 cv2.destroyAllWindows()
 vs.stop()
 ```
+
+아나콘다 프롬프트 창에서 아래와 같이 입력한다.
+
+```python
+python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel
+```
+
+`q`를 눌러서 종료할 수 있는데 종료가 안될 경우도 생긴다. 그럴때는 ctrl + alt + del을 눌러서 연결된 python 실행을 강제로 종료해야 한다.
+
 
 ### 참고 사이트
 
