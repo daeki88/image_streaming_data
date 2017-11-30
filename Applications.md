@@ -2187,7 +2187,7 @@ df.set_index('구분').plot(kind='line', xticks=np.arange(len(df['구분'])), ro
 
 
 
-![png](images/output_34_1.png)
+![png](output_34_1.png)
 
 
 `xticks=np.arange(16)`는 xtick이 보여질 위치를 지정하는 것이다.
@@ -2207,7 +2207,7 @@ df.boxplot()
 
 
 
-![png](images/output_36_1.png)
+![png](output_36_1.png)
 
 
 - 파이 그래프
@@ -2225,7 +2225,7 @@ df_excel['Political Party'].value_counts().plot(kind="pie")
 
 
 
-![png](images/output_38_1.png)
+![png](output_38_1.png)
 
 
 - 바차트
@@ -2334,7 +2334,7 @@ img.save('images/lenna.jpg')
     
 
 
-![png](images/output_44_1.png)
+![png](output_44_1.png)
 
 
 
@@ -2363,7 +2363,7 @@ cropImage.show() # 윈도우즈 기본 그림 보기 프로그램 실행
 ```
 
 
-![png](images/output_47_0.png)
+![png](output_47_0.png)
 
 
 - 붙이기
@@ -2389,7 +2389,7 @@ plt.imshow(img1)
 
 
 
-![png](images/output_49_1.png)
+![png](output_49_1.png)
 
 
 - 파이썬 로고 붙이기
@@ -2443,7 +2443,7 @@ plt.imshow(img3)
 
 
 
-![png](images/output_55_1.png)
+![png](output_55_1.png)
 
 
 
@@ -2460,7 +2460,7 @@ plt.imshow(img4)
 
 
 
-![png](images/output_56_1.png)
+![png](output_56_1.png)
 
 
 `expand=True` 선택을 하면 전체 그림이 보이며 새로 만들어진 이미지의 크기는 증가한다.
@@ -2479,7 +2479,7 @@ plt.imshow(img5)
 
 
 
-![png](images/output_58_1.png)
+![png](output_58_1.png)
 
 
 ## 필터링
@@ -2516,7 +2516,7 @@ plt.imshow(flipImage)
 
 
 
-![png](images/output_62_1.png)
+![png](output_62_1.png)
 
 
 ## 점(픽셀) 연산
@@ -2537,7 +2537,7 @@ plt.imshow(out)
 
 
 
-![png](images/output_64_1.png)
+![png](output_64_1.png)
 
 
 - 채널에 대한 연산을 수행
@@ -2572,109 +2572,21 @@ plt.imshow(img1)
 
 
 
-![png](images/output_66_1.png)
+![png](output_66_1.png)
 
 
 `x and y` 연산은 x가 거짓(0)이면 결과값은 x(0)이고 참이면 결과값은 y가 된다.
 
 # 얼굴 인식
 
-## 참고 사이트
-- 라즈베리 파이 얼굴: http://blog.naver.com/PostView.nhn?blogId=cosmosjs&logNo=220723987718&categoryNo=0&parentCategoryNo=56&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
-- dlib: http://dlib.net/face_recognition.py.html
-
 ## 준비
 
 ### opencv설치
+
+아나콘다 명령어창에서 다음과 같이 입력한다.
+
 ```python
 conda install -c conda-forge opencv # opencv 3.3, 아나콘다
-```
-
-명령어창에서 다음과 같이 `conda install -c conda-forge opencv` 입력한다.
-
-```
-(C:\Users\dyoon\Anaconda3) C:\Users\dyoon\Documents>conda install -c conda-forge opencv
-Fetching package metadata ...............
-Solving package specifications: .
-
-Package plan for installation in environment C:\Users\dyoon\Anaconda3:
-
-# The following NEW packages will be INSTALLED:
-# 
-#     backports.functools_lru_cache: 1.4-py36_1            conda-forge
-#     krb5:                          1.14.2-vc14_0         conda-forge [vc14]
-#     libwebp:                       0.5.2-vc14_7          conda-forge [vc14]
-#     opencv:                        3.3.0-py36_200        conda-forge
-# 
-# The following packages will be UPDATED:
-# 
-#     conda:                         4.3.27-py36_0         conda-forge --> 4.3.29-py36_0 conda-forge
-#     hdf5:                          1.10.1-vc14hb361328_0             --> 1.10.1-vc14_1 conda-forge [vc14]
-#     jpeg:                          9b-vc14h4d7706e_1                 --> 9b-vc14_2     conda-forge [vc14]
-#     libxml2:                       2.9.4-vc14h8fd0f11_5              --> 2.9.5-vc14_1  conda-forge [vc14]
-#     matplotlib:                    2.0.2-py36h58ba717_1              --> 2.1.0-py36_1  conda-forge
-#     pillow:                        4.2.1-py36hdb25ab2_0              --> 4.3.0-py36_1  conda-forge
-# 
-# The following packages will be SUPERSEDED by a higher-priority channel:
-# 
-#     bzip2:                         1.0.6-vc14hdec8e7a_1              --> 1.0.6-vc14_1  conda-forge [vc14]
-#     curl:                          7.55.1-vc14hdaba4a4_3             --> 7.55.1-vc14_0 conda-forge [vc14]
-#     freetype:                      2.8-vc14h17c9bdf_0                --> 2.7-vc14_2    conda-forge [vc14]
-#     icu:                           58.2-vc14hc45fdbb_0               --> 58.1-vc14_1   conda-forge [vc14]
-#     libiconv:                      1.15-vc14h29686d3_5               --> 1.14-vc14_4   conda-forge [vc14]
-#     libpng:                        1.6.32-vc14hce43e6c_2             --> 1.6.28-vc14_2 conda-forge [vc14]
-#     libssh2:                       1.8.0-vc14hcf584a9_2              --> 1.8.0-vc14_2  conda-forge [vc14]
-#     libtiff:                       4.0.8-vc14h04e2a1e_10             --> 4.0.7-vc14_1  conda-forge [vc14]
-#     libxslt:                       1.1.29-vc14hf85b8d4_5             --> 1.1.29-vc14_5 conda-forge [vc14]
-#     openssl:                       1.0.2l-vc14hcac20b0_2             --> 1.0.2l-vc14_0 conda-forge [vc14]
-#     qt:                            5.6.2-vc14h6f8c307_12             --> 5.6.2-vc14_1  conda-forge [vc14]
-#     sqlite:                        3.20.1-vc14h7ce8c62_1             --> 3.19.3-vc14_1 conda-forge [vc14]
-#     tk:                            8.6.7-vc14hb68737d_1              --> 8.6.6-vc14_5  conda-forge [vc14]
-#     yaml:                          0.1.7-vc14hb31d195_1              --> 0.1.6-vc14_0  conda-forge [vc14]
-#     zlib:                          1.2.11-vc14h1cdd9ab_1             --> 1.2.11-vc14_0 conda-forge [vc14]
-# 
-# Proceed ([y]/n)?
-```
-
-`y`를 눌러 설치를 한다.
-
-```
-# Proceed ([y]/n)? y
-# 
-# bzip2-1.0.6-vc 100% |###############################| Time: 0:00:02  67.77 kB/s
-# krb5-1.14.2-vc 100% |###############################| Time: 0:00:03 220.77 kB/s
-# libwebp-0.5.2- 100% |###############################| Time: 0:00:02 449.34 kB/s
-# openssl-1.0.2l 100% |###############################| Time: 0:00:05   1.04 MB/s
-# yaml-0.1.6-vc1 100% |###############################| Time: 0:00:00   1.64 MB/s
-# zlib-1.2.11-vc 100% |###############################| Time: 0:00:00   1.96 MB/s
-# hdf5-1.10.1-vc 100% |###############################| Time: 0:00:07   2.65 MB/s
-# icu-58.1-vc14_ 100% |###############################| Time: 0:00:05   4.17 MB/s
-# jpeg-9b-vc14_2 100% |###############################| Time: 0:00:00   6.90 MB/s
-# libiconv-1.14- 100% |###############################| Time: 0:00:00   2.56 MB/s
-# libpng-1.6.28- 100% |###############################| Time: 0:00:00   1.21 MB/s
-# libssh2-1.8.0- 100% |###############################| Time: 0:00:00 420.79 kB/s
-# sqlite-3.19.3- 100% |###############################| Time: 0:00:02 344.27 kB/s
-# tk-8.6.6-vc14_ 100% |###############################| Time: 0:00:03 908.77 kB/s
-# curl-7.55.1-vc 100% |###############################| Time: 0:00:00 514.73 kB/s
-# freetype-2.7-v 100% |###############################| Time: 0:00:01 264.53 kB/s
-# libtiff-4.0.7- 100% |###############################| Time: 0:00:01 330.34 kB/s
-# libxml2-2.9.5- 100% |###############################| Time: 0:00:04 730.43 kB/s
-# qt-5.6.2-vc14_ 100% |###############################| Time: 0:00:12   4.54 MB/s
-# libxslt-1.1.29 100% |###############################| Time: 0:00:00   5.57 MB/s
-# opencv-3.3.0-p 100% |###############################| Time: 0:00:40   2.83 MB/s
-# pillow-4.3.0-p 100% |###############################| Time: 0:00:02 266.26 kB/s
-# backports.func 100% |###############################| Time: 0:00:00 308.57 kB/s
-# matplotlib-2.1 100% |###############################| Time: 0:00:16 422.41 kB/s
-# conda-4.3.29-p 100% |###############################| Time: 0:00:00 808.43 kB/s
-# 
-# (C:\Users\dyoon\Anaconda3) C:\Users\dyoon\Documents>
-```
-
-### dlib 설치
-
-```python
-pip install dlib
-conda install -c menpo dlib # 아나콘다
 ```
 
 ### xml 파일들 다운로드
@@ -2693,28 +2605,6 @@ files = ['haarcascade_frontalface_default.xml',
 
 for file in files:
     url = 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/' + file
-    fpath = directory + '/' + file
-    if not os.path.exists(fpath):
-        urllib.request.urlretrieve(url, fpath)
-```
-
-- dlib model 파일 다운로드
-
-[http://dlib.net/files/](http://dlib.net/files/)로부터 필요한 파일들 `shape_predictor_68_face_landmarks.dat.bz2`을 다운로드 받는다.
-
-
-```python
-import urllib.request
-import os
-
-directory = 'models'
-if not os.path.exists(directory):
-    os.makedirs(directory)
-
-files = ['shape_predictor_68_face_landmarks.dat.bz2']
-
-for file in files:
-    url = 'http://dlib.net/files/' + file
     fpath = directory + '/' + file
     if not os.path.exists(fpath):
         urllib.request.urlretrieve(url, fpath)
@@ -2765,19 +2655,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-- dlib 이용
-
-```python
-
-```
-
 ## 비디오
-
-### 참고 사이트
-
-- https://realpython.com/blog/python/face-detection-in-python-using-a-webcam/
-
-- https://github.com/shantnu/Webcam-Face-Detect
 
 - 얼굴 인식
 
@@ -2830,19 +2708,43 @@ video_capture.release()
 cv2.destroyAllWindows()
 ```
 
+## 참고 사이트
+
+- OpenCV 얼굴 인식: https://docs.opencv.org/3.3.0/d7/d8b/tutorial_py_face_detection.html
+- dlib 얼굴 인식 예제 코드: http://dlib.net/face_recognition.py.html
+- https://realpython.com/blog/python/face-detection-in-python-using-a-webcam/
+- https://github.com/shantnu/Webcam-Face-Detect
+
 # 사물인식(object detection)
 
-## opencv이용
-
-https://www.pyimagesearch.com/2017/09/18/real-time-object-detection-with-deep-learning-and-opencv/ 참조.
-
-카페모델은 https://github.com/chuanqi305/MobileNet-SSD 에서 밑에 보면 링크https://drive.google.com/open?id=0B3gersZ2cHIxZi13UWF0OXBsZzA 가 있다. 이것이 위에서 예제로 사용한 것과 같은 모델인지는 확인 못했음. 테스트 해본 결과 적용이 안되는 것 확인.
+## 필요한 모듈 설치
 
 `imutils` 모듈 설치 필요
 
 ```python
 pip install imutils
 ```
+
+## 모델 다운로드
+
+```python
+import urllib.request
+import os
+
+files = ['MobileNetSSD_deploy.caffemodel',
+         'MobileNetSSD_deploy.prototxt.txt']
+
+urls = ['http://gofile.me/6w7gF/egVdflHDS', 'http://gofile.me/6w7gF/dr7GO5SBS']
+
+for (url, file) in zip(urls, files):
+    print(url, file)
+    if not os.path.exists(file):
+        urllib.request.urlretrieve(url, file)
+```
+
+### 실행
+
+사용법은 다음과 같이 한다.
 
 ```python
 python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel
@@ -2954,3 +2856,10 @@ print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
 cv2.destroyAllWindows()
 vs.stop()
 ```
+
+### 참고 사이트
+
+- https://realpython.com/blog/python/face-detection-in-python-using-a-webcam/
+- https://github.com/shantnu/Webcam-Face-Detect
+- https://www.pyimagesearch.com/2017/09/18/real-time-object-detection-with-deep-learning-and-opencv/
+- MobileNet-SSD 탐색 네트워크 카페 구현: https://github.com/chuanqi305/MobileNet-SSD
