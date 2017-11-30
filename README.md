@@ -1,3 +1,5 @@
-# My Awesome Book
+# 진로 체험
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+이 문서는 진로 체험 프로그램에 맞춰 만들어진 것입니다. 궁금한 사항이 있으면 아래 연락처로 연락바랍니다.
+
+연락처: <mailto:daeki88@gmail.com>
