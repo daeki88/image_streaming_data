@@ -2187,7 +2187,7 @@ df.set_index('구분').plot(kind='line', xticks=np.arange(len(df['구분'])), ro
 
 
 
-![png](output_34_1.png)
+![png](images/output_34_1.png)
 
 
 `xticks=np.arange(16)`는 xtick이 보여질 위치를 지정하는 것이다.
@@ -2207,7 +2207,7 @@ df.boxplot()
 
 
 
-![png](output_36_1.png)
+![png](images/output_36_1.png)
 
 
 - 파이 그래프
@@ -2225,15 +2225,26 @@ df_excel['Political Party'].value_counts().plot(kind="pie")
 
 
 
-![png](output_38_1.png)
+![png](images/output_38_1.png)
 
 
 - 바차트
 
-In[43]:
 
-
+```python
 df_excel['Political Party'].value_counts().plot(kind="bar")
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x1d0fd1f2780>
+
+
+
+
+![png](images/output_40_1.png)
+
 
 ## 참고 사이트
 
@@ -2334,7 +2345,7 @@ img.save('images/lenna.jpg')
     
 
 
-![png](output_44_1.png)
+![png](images/output_45_1.png)
 
 
 
@@ -2363,7 +2374,7 @@ cropImage.show() # 윈도우즈 기본 그림 보기 프로그램 실행
 ```
 
 
-![png](output_47_0.png)
+![png](images/output_48_0.png)
 
 
 - 붙이기
@@ -2389,7 +2400,7 @@ plt.imshow(img1)
 
 
 
-![png](output_49_1.png)
+![png](images/output_50_1.png)
 
 
 - 파이썬 로고 붙이기
@@ -2443,7 +2454,7 @@ plt.imshow(img3)
 
 
 
-![png](output_55_1.png)
+![png](images/output_56_1.png)
 
 
 
@@ -2460,7 +2471,7 @@ plt.imshow(img4)
 
 
 
-![png](output_56_1.png)
+![png](images/output_57_1.png)
 
 
 `expand=True` 선택을 하면 전체 그림이 보이며 새로 만들어진 이미지의 크기는 증가한다.
@@ -2479,7 +2490,7 @@ plt.imshow(img5)
 
 
 
-![png](output_58_1.png)
+![png](images/output_59_1.png)
 
 
 ## 필터링
@@ -2516,7 +2527,7 @@ plt.imshow(flipImage)
 
 
 
-![png](output_62_1.png)
+![png](images/output_63_1.png)
 
 
 ## 점(픽셀) 연산
@@ -2537,7 +2548,7 @@ plt.imshow(out)
 
 
 
-![png](output_64_1.png)
+![png](images/output_65_1.png)
 
 
 - 채널에 대한 연산을 수행
@@ -2572,7 +2583,7 @@ plt.imshow(img1)
 
 
 
-![png](output_66_1.png)
+![png](images/output_67_1.png)
 
 
 `x and y` 연산은 x가 거짓(0)이면 결과값은 x(0)이고 참이면 결과값은 y가 된다.
