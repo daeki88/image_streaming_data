@@ -1,3 +1,3 @@
 # Summary
 
-* [진로체험](Applications.md)
+* [진로 체험](Applications.md)
